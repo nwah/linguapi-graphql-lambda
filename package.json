@@ -1,0 +1,25 @@
+{
+  "name": "linguapi-graphql-lambda",
+  "version": "0.0.1",
+  "description": "Lambda-based GraphQL API for LinguAPI",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwah/linguapi-graphql-lambda.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nwah/linguapi-graphql-lambda/issues"
+  },
+  "homepage": "https://github.com/nwah/linguapi-graphql-lambda#readme",
+  "dependencies": {
+    "apollo-server-lambda": "^1.3.2",
+    "graphql": "^0.13.1",
+    "graphql-tools": "^2.21.0",
+    "node-fetch": "^2.1.1"
+  }
+}
