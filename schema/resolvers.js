@@ -1,3 +1,4 @@
+const { values } = require('lodash')
 const {
   UnihanReadingType,
   UnihanVariantType,
@@ -21,13 +22,13 @@ const getCharacterByUnicode = ucn =>
   pool.query('SELECT ch, ucn FROM character WHERE ucn = $1 LIMIT 1', [ucn])
     .then(resultToCharacter)
 
-const allowedReadingTypes = Object.values(UnihanReadingType)
+const allowedReadingTypes = values(UnihanReadingType)
 const getReadings = (ch, types = allowedReadingTypes) =>
   pool.query('SELECT type, reading FROM reading WHERE ch = $1 AND type = ANY ($2)', [ch, types])
     .then(r => { console.log(types); return r })
     .then(result => result.rows)
 
-const allowedVariantTypes = Object.values(UnihanVariantType)
+const allowedVariantTypes = values(UnihanVariantType)
 const getVariants = (ch, types = allowedVariantTypes) =>
   pool.query('SELECT type, variant, additional FROM variant WHERE ch = $1 AND type = ANY ($2)', [ch, types])
     .then(r => { console.log(types); return r })
